@@ -17,5 +17,5 @@ npm run start
 #### Links
 
 - [Pranx Repository](https://github.com/LiasCode/pranx)
-- [Pranx Docs](https://github.com/LiasCode/pranx/readme)
+- [Pranx Docs](https://github.com/LiasCode/pranx/blob/main/README.md)
 - [Preact Docs](https://preactjs.com/)

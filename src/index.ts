@@ -1,8 +1,12 @@
 import { serve } from "@hono/node-server";
+import { Hono } from "hono";
 import { pranx } from "pranx";
 
-const app = await pranx.init({
-  mode: "prod",
+const app = new Hono();
+
+await pranx.init({
+  mode: process.env.NODE_ENV === "production" ? "prod" : "dev",
+  server: app,
 });
 
 app.onError((err, c) => {

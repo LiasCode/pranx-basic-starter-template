@@ -1,46 +1,10 @@
 import { useSignal } from "@preact/signals";
-import type { MetaFunction } from "pranx";
 import { useEffect } from "preact/compat";
 import { Layout } from "../layout/layout";
 import Docs from "./docs.md";
 import "./home.scss";
 
-export const meta: MetaFunction = async () => {
-  return (
-    <>
-      <meta charset="utf-8" />
-
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1"
-      />
-
-      <title>Home | Pranx Basic Template</title>
-
-      <link
-        rel="icon"
-        type="image/svg+xml"
-        href="/favicon.svg"
-      />
-
-      <meta
-        name="color-scheme"
-        content="light dark"
-      />
-      <meta
-        name="theme-color"
-        content="#ffffff"
-      />
-
-      <meta
-        name="author"
-        content="LiasCode"
-      />
-    </>
-  );
-};
-
-export default function HomePage() {
+export default function HomePage(props: { msg: string }) {
   const count = useSignal(0);
 
   useEffect(() => {
@@ -59,6 +23,9 @@ export default function HomePage() {
         >
           Preact signals also works {"->"} {count.value}
         </button>
+
+        <span>{props.msg}</span>
+
         <div class="separator-horizontal"></div>
         <Docs />
       </div>

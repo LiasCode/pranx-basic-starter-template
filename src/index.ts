@@ -9,11 +9,6 @@ await pranx.init({
   server: app,
 });
 
-app.onError((err, c) => {
-  console.error(err);
-  return c.text("Custom Error Message", 500);
-});
-
 serve(
   {
     fetch: app.fetch,

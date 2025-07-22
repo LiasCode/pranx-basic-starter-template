@@ -8,7 +8,7 @@
     "format": "prettier --write --cache ./src"
   },
   "dependencies": {
-    "@hono/node-server": "^1.16.0",
+    "@hono/node-server": "^1.17.1",
     "@preact/signals": "^2.2.1",
     "hono": "^4.8.5",
     "pranx": "latest",
@@ -16,7 +16,7 @@
     "preact-iso": "^2.9.2"
   },
   "devDependencies": {
-    "@types/node": "^20.19.8",
+    "@types/node": "^20.19.9",
     "prettier": "^3.6.2",
     "prettier-plugin-organize-imports": "^4.1.0",
     "tsx": "^4.20.3",

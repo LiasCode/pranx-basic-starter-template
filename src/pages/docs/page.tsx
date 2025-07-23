@@ -1,10 +1,11 @@
 import { Layout } from "../../layout/layout";
+import docsStyles from "./docs.module.css";
 
 export default function DocsPage() {
   return (
     <Layout>
-      <div id="docs-page">
-        <h1>Docs</h1>
+      <div>
+        <h1 class={docsStyles.title}>Docs</h1>
       </div>
     </Layout>
   );

@@ -1,36 +1,4 @@
 import type { MetaFunction } from "pranx";
+import { createMeta } from "../../layout/createMeta.js";
 
-export const meta: MetaFunction = async () => {
-  return (
-    <>
-      <meta charset="utf-8" />
-
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1"
-      />
-
-      <title>Docs | Pranx Basic Template</title>
-
-      <link
-        rel="icon"
-        type="image/svg+xml"
-        href="/favicon.svg"
-      />
-
-      <meta
-        name="color-scheme"
-        content="light dark"
-      />
-      <meta
-        name="theme-color"
-        content="#ffffff"
-      />
-
-      <meta
-        name="author"
-        content="LiasCode"
-      />
-    </>
-  );
-};
+export const meta: MetaFunction = createMeta(<title>Docs | Pranx Basic Template</title>);

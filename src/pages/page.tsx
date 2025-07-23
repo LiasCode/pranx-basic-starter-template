@@ -1,7 +1,7 @@
 import { useSignal } from "@preact/signals";
 import { useEffect } from "preact/compat";
+import Docs from "../data/docs.md";
 import { Layout } from "../layout/layout";
-import Docs from "./docs.md";
 import "./home.scss";
 
 export default function HomePage(props: { msg: string }) {

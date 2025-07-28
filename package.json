@@ -13,7 +13,7 @@
     "github-markdown-css": "^5.8.1",
     "hono": "^4.8.9",
     "pranx": "latest",
-    "preact": "^10.26.9",
+    "preact": "^10.27.0",
     "preact-iso": "^2.9.2"
   },
   "devDependencies": {

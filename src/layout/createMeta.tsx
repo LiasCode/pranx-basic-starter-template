@@ -1,8 +1,8 @@
 import type { MetaFunction } from "pranx";
-import type { VNode } from "preact";
+import type { PropsWithChildren } from "preact/compat";
 
 export const createMeta =
-  (nodes: VNode): MetaFunction =>
+  (childrens: PropsWithChildren["children"]): MetaFunction =>
   async () => {
     return (
       <>
@@ -34,7 +34,7 @@ export const createMeta =
           content="LiasCode"
         />
 
-        {nodes}
+        {childrens}
       </>
     );
   };

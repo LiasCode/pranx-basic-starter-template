@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from "preact/compat";
 import { Header } from "../components/Header";
-import "./layout.css";
+import "./layout.scss";
 
 export const Layout = (props: PropsWithChildren) => {
   return (

@@ -1,32 +1,29 @@
 {
-  "name": "pranx-basic-starter-template",
+  "name": "playground",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "tsx watch --include \"./src/**/*\" --clear-screen=false ./src/index.ts ",
-    "build": "tsc",
-    "start": "NODE_ENV=production node dist/index.js",
-    "format": "prettier --write --cache ./src"
+    "dev": "pranx --dev",
+    "build": "pranx --build",
+    "start": "pranx --start",
+    "check": "tsc --noEmit",
+    "format": "prettier --write --cache src"
   },
+  "author": "LiasCode <liascode.dev@gmail.com>",
+  "license": "MIT",
   "dependencies": {
-    "@hono/node-server": "^1.18.1",
-    "@preact/signals": "^2.2.1",
-    "esbuild-plugin-sass": "^1.0.1",
-    "esbuild-plugin-tailwindcss": "1.2.3",
-    "github-markdown-css": "^5.8.1",
-    "hono": "^4.9.0",
-    "pranx": "latest",
-    "preact": "^10.27.0",
-    "preact-iso": "^2.9.2",
-    "@mdx-js/esbuild": "^3.1.0"
+    "pranx": "^0.1.0-beta.3",
+    "preact": "^10.27.1"
   },
   "devDependencies": {
-    "@types/node": "^20.19.10",
-    "autoprefixer": "^10.4.21",
+    "@tailwindcss/postcss": "^4.1.12",
+    "@types/mdx": "^2.0.13",
+    "@types/node": "^20.19.11",
+    "github-markdown-css": "^5.8.1",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
     "prettier-plugin-organize-imports": "^4.2.0",
-    "tailwindcss": "3.4.17",
-    "tsx": "^4.20.3",
+    "tailwindcss": "^4.1.12",
     "typescript": "^5.9.2"
   }
 }

@@ -1,41 +1,41 @@
-import { useSignal } from "@preact/signals";
-import "github-markdown-css";
-import { useEffect } from "preact/compat";
-import Docs from "../data/docs.md";
-import { Layout } from "../layout/layout";
+import type { GetStaticPropsFunction, InferProps } from "pranx";
+import { useState } from "preact/hooks";
+import { Header } from "src/components/Header";
+import Docs from "../components/Docs.md";
 
-export default function HomePage(props: { msg: string }) {
-  const count = useSignal(0);
-
-  useEffect(() => {
-    console.log("Hello Pranx World");
-  }, []);
+export default function HomePage(props: InferProps<typeof getStaticProps>) {
+  const [count, setCount] = useState(0);
 
   return (
-    <Layout>
-      <div className="flex flex-col gap-2 py-4">
-        <h1 class="text-2xl text-white">Pranx Basic Template</h1>
+    <div className="flex flex-col min-h-screen">
+      <Header />
+
+      <div class="flex flex-col gap-4 p-6 max-w-3xl mx-auto">
+        <h1 class="text-3xl">Home Page</h1>
         <button
-          class="inline-flex max-w-fit items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium outline-none bg-gray-700 text-white hover:bg-gray-600 transition-all shadow-sm h-9 px-4 py-2"
-          onClick={() => (count.value = count.value + 1)}
+          class="p-2 border rounded-3xl text-white w-fit"
+          type="button"
+          onClick={() => {
+            setCount(count + 1);
+          }}
         >
-          Preact signals also works {"->"} {count.value}
+          Counter +1: {count}
         </button>
 
-        <div class="w-full border-b border-b-white"></div>
-
-        <pre class={"my-4"}>
-          <code>Static Props: {JSON.stringify(props.msg, null, 4)}</code>
-        </pre>
-
-        <div class="w-full border-b border-b-white"></div>
-
-        <h1 class="text-2xl text-white">Rendering Markdown:</h1>
+        <h1>Title {props.title}</h1>
 
         <div class="markdown-body">
           <Docs />
         </div>
       </div>
-    </Layout>
+    </div>
   );
 }
+
+export const getStaticProps: GetStaticPropsFunction<{ title: string }> = async () => {
+  return {
+    props: {
+      title: "hola",
+    },
+  };
+};

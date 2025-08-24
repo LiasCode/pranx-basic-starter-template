@@ -20,28 +20,23 @@ export function Header() {
               About
             </a>
           </li>
-          <li>
-            <a
-              href="/products"
-              className="text-white hover:text-indigo-200 transition-colors font-medium"
-            >
-              Products
-            </a>
-          </li>
-          <li>
-            <a
-              href="/products/2"
-              className="text-white hover:text-indigo-200 transition-colors font-medium"
-            >
-              Products 2
-            </a>
-          </li>
+          {["1", "2", "3"].map((id) => (
+            <li key={id}>
+              <a
+                href={`/product/${id}`}
+                className="text-white hover:text-indigo-200 transition-colors font-medium"
+              >
+                Product {id}
+              </a>
+            </li>
+          ))}
+
           <li>
             <a
               href="/not-found"
-              className="text-white hover:text-indigo-200 transition-colors font-medium"
+              className="text-red-400 hover:text-indigo-200 transition-colors font-medium"
             >
-              Not Found
+              404
             </a>
           </li>
         </ul>

@@ -20,6 +20,16 @@ export function Header() {
               About
             </a>
           </li>
+
+          <li>
+            <a
+              href="/user/pedro"
+              className="text-white hover:text-indigo-200 transition-colors font-medium"
+            >
+              User Details
+            </a>
+          </li>
+
           {["1", "2", "3"].map((id) => (
             <li key={id}>
               <a

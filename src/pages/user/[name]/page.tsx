@@ -15,8 +15,10 @@ export default function UserDetails(props: { name: string }) {
   );
 }
 
-export const getServerSideProps: GetServerSidePropsFunction<{ name: string }> = async () => {
+export const getServerSideProps: GetServerSidePropsFunction<{ name: string }> = async ({
+  event,
+}) => {
   return {
-    name: "Pedro" + Math.random(),
+    name: event.context.params!.name,
   };
 };

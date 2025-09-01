@@ -32,16 +32,14 @@ export function Header() {
             </Link>
           </li>
 
-          {["1", "2", "3"].map((id) => (
-            <li key={id}>
-              <Link
-                to={`/product/${id}`}
-                className="text-white hover:text-indigo-200 transition-colors font-medium"
-              >
-                Product {id}
-              </Link>
-            </li>
-          ))}
+          <li>
+            <Link
+              to={`/product`}
+              className="text-white hover:text-indigo-200 transition-colors font-medium"
+            >
+              Products
+            </Link>
+          </li>
 
           <li>
             <Link

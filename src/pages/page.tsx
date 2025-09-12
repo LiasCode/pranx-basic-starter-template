@@ -1,6 +1,7 @@
 import type { GetStaticPropsFunction, InferStaticProps } from "pranx";
 import { useState } from "preact/hooks";
 import { Header } from "src/components/Header";
+import { Button } from "src/components/ui/button";
 import Docs from "../components/Docs.md";
 
 export default function HomePage(props: InferStaticProps<typeof getStaticProps>) {
@@ -12,19 +13,17 @@ export default function HomePage(props: InferStaticProps<typeof getStaticProps>)
 
       <div class="flex flex-col gap-4 p-6 max-w-3xl mx-auto">
         <h1 class="text-3xl">Home Page</h1>
-        <button
-          class="p-2 border rounded-3xl text-white w-fit"
-          type="button"
+        <Button
           onClick={() => {
             setCount(count + 1);
           }}
         >
           Counter +1: {count}
-        </button>
+        </Button>
 
         <h1>Title {props.title}</h1>
 
-        <div class="markdown-body">
+        <div class="markdown-body p-4 rounded-2xl">
           <Docs />
         </div>
       </div>

@@ -11,6 +11,16 @@ export default function ServerEntry({ children }: ServerEntryProps) {
           content="width=device-width, initial-scale=1.0"
         />
         <title>Pranx Basic Template</title>
+
+        <meta
+          name="color-scheme"
+          content="light dark"
+        />
+        <meta
+          name="theme-color"
+          content="#ffffff"
+        />
+
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -34,8 +44,8 @@ export default function ServerEntry({ children }: ServerEntryProps) {
         />
         <Meta />
       </head>
-      <body>
-        <div id="app">{children}</div>
+      <body class="dark text-foreground group/body overscroll-none font-sans antialiased">
+        <div id="app-root">{children}</div>
         <Scripts />
       </body>
     </html>

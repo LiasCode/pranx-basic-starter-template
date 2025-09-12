@@ -1,54 +1,51 @@
 import { Link } from "pranx/client";
+import { Button } from "./ui/button";
 
 export function Header() {
   return (
-    <header className="bg-gradient-to-r from-blue-600 to-indigo-700 shadow-md py-4 px-6">
-      <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Pranx Basic</h1>
+    <header className="shadow-md py-4 px-6">
+      <h1 className="text-3xl font-bold mb-2">Pranx Basic</h1>
       <nav>
         <ul className="flex gap-6">
-          <li>
-            <Link
-              to="/"
-              className="text-white hover:text-indigo-200 transition-colors font-medium"
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/about"
-              className="text-white hover:text-indigo-200 transition-colors font-medium"
-            >
-              About
-            </Link>
-          </li>
+          {[
+            { to: "/", label: "Home" },
+            {
+              to: "/about",
+              label: "About",
+            },
+            {
+              to: "/user/pedro",
+              label: "User Details",
+            },
+            {
+              to: "/product",
+              label: "Products",
+            },
+            {
+              to: "/not-found",
+              label: "404",
+            },
+          ].map((l) => {
+            return (
+              <li>
+                <Button
+                  asChild
+                  variant="link"
+                >
+                  <Link to={l.to}>{l.label}</Link>
+                </Button>
+              </li>
+            );
+          })}
 
-          <li>
-            <Link
-              to="/user/pedro"
-              className="text-white hover:text-indigo-200 transition-colors font-medium"
-            >
-              User Details
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              to={`/product`}
-              className="text-white hover:text-indigo-200 transition-colors font-medium"
-            >
-              Products
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              to="/not-found"
-              className="text-red-400 hover:text-indigo-200 transition-colors font-medium"
-            >
-              404
-            </Link>
-          </li>
+          <Button
+            variant="ghost"
+            onClick={() => {
+              document.body.classList.toggle("dark");
+            }}
+          >
+            Toggle theme
+          </Button>
         </ul>
       </nav>
     </header>

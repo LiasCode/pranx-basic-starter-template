@@ -1,4 +1,4 @@
-import { PranxConfig } from "pranx";
+import type { PranxConfig } from "pranx";
 
 export default {
   esbuild: {},

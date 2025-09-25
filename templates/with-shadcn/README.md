@@ -1,4 +1,4 @@
-# Pranx Basic Starter Template
+# Pranx with-shadcn Template
 
 ```
 # Install deps
